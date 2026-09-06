@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@500;700;800&family=Orbitron:wght@500;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-syne: "Syne", sans-serif;
+  --font-orbitron: "Orbitron", sans-serif;
+  
+  --color-primary-bg: #070c0a;
+  --color-neon-green: #00FF9F;
+  --color-neon-cyan: #3b82f6;
+  --color-neon-blue: #3b82f6;
+  --color-neon-red: #ff003c;
+}
+
+@layer base {
+  html, body {
+    @apply text-white font-sans transition-colors duration-500;
+    min-height: 100vh;
+    background-color: #070c0a !important;
+  }
+}
+
+/* =========================================================================
+   CLEAN, SUBTLE ACCENT THEMES (KEEPING THE SIGNATURE DARK CYBER CANVAS)
+   ========================================================================= */
+
+/* --- Default Mode (Matrix Emerald Accents) --- */
+.theme-default {
+  --accent-color: #00ff9f;
+  --accent-glow: rgba(0, 255, 159, 0.25);
+}
+.theme-default .glass {
+  background: rgba(10, 16, 14, 0.82);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  transform: translateZ(0);
+  border: 1px solid rgba(0, 255, 159, 0.12);
+}
+.theme-default .cyber-grid {
+  background-image: linear-gradient(rgba(0, 255, 159, 0.04) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0, 255, 159, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* --- Web VAPT Mode (Light, Clean Electric Blue Accents) --- */
+.theme-web {
+  --accent-color: #3b82f6;
+  --accent-glow: rgba(59, 130, 246, 0.25);
+}
+.theme-web .glass {
+  background: rgba(10, 15, 22, 0.82);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  transform: translateZ(0);
+  border: 1px solid rgba(59, 130, 246, 0.16);
+}
+.theme-web .cyber-grid {
+  background-image: linear-gradient(rgba(59, 130, 246, 0.04) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(59, 130, 246, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* --- Host & Network Mode (Vivid Cyber Crimson / Electric Red Accents) --- */
+.theme-network {
+  --accent-color: #ff003c;
+  --accent-glow: rgba(255, 0, 60, 0.4);
+}
+.theme-network .glass {
+  background: rgba(18, 9, 12, 0.85);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  transform: translateZ(0);
+  border: 1px solid rgba(255, 0, 60, 0.22);
+}
+.theme-network .glass:hover {
+  border-color: rgba(255, 0, 60, 0.5);
+}
+.theme-network .cyber-grid {
+  background-image: linear-gradient(rgba(255, 0, 60, 0.07) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 0, 60, 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+@layer utilities {
+  .neon-border {
+    @apply border border-neon-green/40 shadow-[0_0_12px_rgba(0,255,159,0.2)];
+  }
+  
+  .neon-text-green {
+    @apply text-neon-green drop-shadow-[0_0_8px_rgba(0,255,159,0.6)];
+  }
+  
+  .neon-text-blue {
+    color: #60a5fa;
+    text-shadow: 0 0 8px rgba(96, 165, 250, 0.6);
+  }
+
+  .neon-text-cyan {
+    color: #38bdf8;
+    text-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+  }
+
+  .neon-text-red {
+    color: #ff2a55;
+    text-shadow: 0 0 10px rgba(255, 0, 60, 0.85), 0 0 25px rgba(255, 0, 60, 0.45);
+  }
+  
+  .neon-glow-green {
+    box-shadow: 0 0 16px rgba(0, 255, 159, 0.3);
+  }
+  
+  .neon-glow-blue {
+    box-shadow: 0 0 16px rgba(59, 130, 246, 0.3);
+  }
+
+  .neon-glow-red {
+    box-shadow: 0 0 20px rgba(255, 0, 60, 0.5), 0 0 40px rgba(255, 0, 60, 0.2);
+  }
+}

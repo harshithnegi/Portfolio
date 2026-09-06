@@ -1,0 +1,7 @@
+# robots.txt for Harshit Negi - Cybersecurity Portfolio
+# Allow all search engine crawlers (Googlebot, Bingbot, etc.)
+User-agent: *
+Allow: /
+
+# Canonical Sitemap URL
+Sitemap: https://harshitnegi.in/sitemap.xml
